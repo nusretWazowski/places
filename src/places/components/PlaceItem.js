@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ButtonComponent from "../../shared/components/UIElements/ButtonComponent";
 import Card from "../../shared/components/UIElements/Card";
+import Map from "../../shared/components/UIElements/Map";
 import Modal from "../../shared/components/UIElements/Modal";
 const PlaceItem = (props) => {
   const [showMap, setShowMap] = useState(false);
@@ -25,9 +26,9 @@ const PlaceItem = (props) => {
         footerStyle={footerStyle}
         footer={<ButtonComponent onClick={closeMap}>CLOSE</ButtonComponent>}
       >
-        <Map>
-            <h2>THE MAP!</h2>
-        </Map>
+        <MapContainer>
+          <Map center={props.coordinates} zoom={16} />
+        </MapContainer>
       </Modal>
       <ListItem>
         <StyledCard>
@@ -52,7 +53,7 @@ const PlaceItem = (props) => {
   );
 };
 
-const Map = styled.div`
+const MapContainer = styled.div`
   height: 15rem;
   width: 100%;
 `;

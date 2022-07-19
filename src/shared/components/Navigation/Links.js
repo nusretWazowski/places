@@ -8,39 +8,28 @@ const Links = (props) => {
     color: "#292929",
   };
 
+  const activeLink = ({ isActive }) => (isActive ? activeStyle : undefined);
+
   return (
     <List desktop={props.isDesktop}>
       <CloseButton onClick={props.onCloseDrawer}>X</CloseButton>
       <li onClick={props.onCloseDrawer}>
-        <NavLink
-          to="/"
-          exact
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
+        <NavLink to="/" exact style={activeLink}>
           ALL USERS
         </NavLink>
       </li>
       <li onClick={props.onCloseDrawer}>
-        <NavLink
-          to="/u1/places"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
+        <NavLink to="/u1/places" style={activeLink}>
           MY PLACES
         </NavLink>
       </li>
       <li onClick={props.onCloseDrawer}>
-        <NavLink
-          to="/new"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
+        <NavLink to="/new" style={activeLink}>
           ADD PLACE
         </NavLink>
       </li>
       <li onClick={props.onCloseDrawer}>
-        <NavLink
-          to="/auth"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
+        <NavLink to="/auth" style={activeLink}>
           LOGIN
         </NavLink>
       </li>
