@@ -1,10 +1,9 @@
 import PlaceList from "../components/PlaceList";
-import uuid from "react-uuid";
 import { useParams } from "react-router-dom";
 
 const PLACES = [
   {
-    id: uuid(),
+    id: 1,
     title: "Bazinga Memorial",
     description: "Truly one of the funniest places in existence.",
     imgUrl:
@@ -17,7 +16,7 @@ const PLACES = [
     poster: "u1",
   },
   {
-    id: uuid(),
+    id: 2,
     title: "Fourth Knight",
     description: "#1 Victory Royale.",
     imgUrl:
